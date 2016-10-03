@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='content' description='Travel app in Django'>
+	<title>Add Plan</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	{% load staticfiles %}
+	<link rel='stylesheet' type='text/css' href='{% static "travel/styles/style.css" %}'>
+</head>
+<body>
+	<div class='container add'>
+		<form class='header' action='{% url "travel:logout" %}' method='GET'>
+			<input class='btn btn-default' type='submit' value='Logout'>
+		</form>
+		<form class='header' action='{% url "travel:dashboard" %}' method='GET'>
+			<input class='btn btn-default' type='submit' value='Home'>
+		</form>
+		<h1>Add A Trip</h1>
+		<form class='travel_details' action='{% url "travel:process_add" %}' method='POST'>
+		{% csrf_token %}
+			<label>Destination:</label>
+			<input type='text' name='destination'>
+			<label>Description:</label>
+			<input type='text' name='description'>
+			<label>Travel Date From:</label>
+			<input type='date' name='date_from'>
+			<label>Return Date :</label>
+			<input type='date' name='date_to'>
+			<input class='btn btn-default' type='submit' value='Add'>
+		</form>
+		<div class='messages'>
+ 			{% for message in messages %}
+ 				<p {% if message.tags %} class='{{message.tags}}' {% endif %}>{{message}}</p>
+ 			{% endfor %}
+ 		</div>
+	</div>
+</body>
+</html>

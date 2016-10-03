@@ -1,0 +1,80 @@
+* {
+	/*outline: 2px solid black;*/
+}
+/*INDEX*/
+div.inline {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 100px;
+}
+div.register {
+	margin-bottom: 50px;
+}
+	div.register label {
+		display: block;
+	}
+	div.register input {
+		display: block;
+	}
+	div.register input.btn-default {
+		margin-top: 20px;
+	}
+	div.login label {
+		display: block;
+	}
+	div.login input {
+		display: block
+	}
+	div.login input.btn-default {
+		margin-top: 20px;
+	}
+div.messages {
+	margin-top: 30px;
+}
+div.messages p.error {
+	color: red;
+	font-weight: bold;
+}
+
+/*DASHBOARD*/
+table.schedule {
+	margin-bottom: 50px;
+}
+
+form.header {
+	float: right;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+div.success {
+	height: 50px;
+}
+	div.success p.success {
+		color: lightgreen;
+		font-weight: bold;
+	}
+
+/*ADD*/
+div.add form.travel_details label {
+	margin-top: 15px;
+	display: block;
+}
+div.add form.travel_details input[type=date] {
+	width: 175px;
+}
+div.add form.travel_details input.btn-default {
+	display: block;
+	margin-left: 125px;
+	margin-top: 10px;
+} 
+
+/*SHOW*/
+div.show {
+
+}
+	div.marginleft30 {
+		margin-left: 30px;
+	}
+	h1.margintop50 {
+		margin-top: 50px;
+	}

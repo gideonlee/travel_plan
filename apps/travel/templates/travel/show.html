@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='content' description='Travel app in Django'>
+	<title></title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	{% load staticfiles %}
+	<link rel='stylesheet' type='text/css' href='{% static "travel/styles/style.css" %}'>
+</head>
+<body>
+	<div class='container show'>
+		<form class='header' action='{% url "travel:logout" %}' method='GET'>
+			<input class='btn btn-default' type='submit' value='Logout'>
+		</form>
+		<form class='header' action='{% url "travel:dashboard" %}' method='GET'>
+			<input class='btn btn-default' type='submit' value='Home'>
+		</form>
+		<h1>{{trip.destination}}</h1>
+		<div class='marginleft30'>
+			<p>Planned by: {{trip.user.name}}</p>
+			<p>Description: {{trip.description}}</p>
+			<p>Travel Date From: {{trip.date_from}}</p>
+			<p>Travel Date To: {{trip.date_to}}</p>
+		</div>
+
+		<h1 class='margintop50'>Other User's Joining The Trip:</h1>
+		<div class='marginleft30'>
+		{% for user in users %}
+			<p>{{user.name}}</p>
+		{% endfor %}
+		</div>
+
+	</div>
+</body>
+</html>
